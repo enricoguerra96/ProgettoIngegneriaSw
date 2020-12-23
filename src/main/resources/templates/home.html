@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome</title>
+</head>
+<body>
+<h1>Welcome to the Weather stations control home.</h1><br>
+<table border="0">
+    <thead>
+    <tr>
+        <th>Your ID:</th>
+        <th th:text="${id}"><b>10</b></th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table><br>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Location</th>
+        <th>Temperature</th>
+        <th>Pressure</th>
+        <th>Sunshine</th>
+        <th>Rainfall</th>
+        <th>WindSpeed</th>
+        <th>WindDirection</th>
+        <th>Report</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="WeatherStation: ${wstations}">
+        <td th:text="${WeatherStation.id}"> <b>10 </b></td>
+        <td th:text="${WeatherStation.location}"> Rome </td>
+        <td th:text="${WeatherStation.location"> Rome </td>
+        <td th:text="${WeatherStation.location}"> Rome </td>
+        <td th:text="${WeatherStation.location}"> Rome </td>
+        <td th:text="${WeatherStation.location}"> Rome </td>
+        <td th:text="${WeatherStation.location}"> Rome </td>
+        <td th:text="${WeatherStation.location}"> Rome </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
