@@ -1,6 +1,6 @@
 # WEATHER STATIONS SYSTEM
 
-### INFORMAL REQUIREMENTS
+## INFORMAL REQUIREMENTS
 
 The government of a country with large areas of wilderness decides to deploy several hundred **weather stations** in remote areas. Stations collect and process data from a set of instruments that measure :
 
@@ -23,7 +23,7 @@ A **maintenance station** is present to monitor measures and fix HW/SW problems 
 
 The **Software** supports dynamic configuration and can be upgraded, downgraded and backed up.
 
-### SCENARIOS
+## SCENARIOS
 
 5 scenarios were implemented:
 
@@ -43,10 +43,10 @@ Following diagrams were implemented in UML:
 * 5 Activity diagrams, one for each scenario
 * 5 Sequence diagrams, one for each scenario
 
-### QUALITY ASSURANCE
+## QUALITY ASSURANCE
 
 
-######ACCEPTANCE TEST SELECTION
+###ACCEPTANCE TEST SELECTION
 
 A total of 14 acceptance tests were implemented in the class _AppTest_. 
 All the acceptance tests reflect different faces of all the important software features.
@@ -72,7 +72,7 @@ Here are all acceptance test cases grouped by scenario:
     * _testUpgradeVersion()_
     * _testDowngradeVersion()_
 
-######UNIT TEST COVERAGE
+###UNIT TEST COVERAGE
 
 The **AppController** class has already been tested with acceptance tests, so it hasn't undergone extensive unit testing.
 
