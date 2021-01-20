@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Report compiling</title>
+</head>
+<body>
+<h1> Problems reporting</h1>
+<p> Please insert into the box the measure to which you encountered the problem.</p>
+<p><u>N.B: You can insert only Temperature, Sunshine, Rainfall, Pressure, Wind direction, Wind speed.</u></p>
+<br>
+<form action="report" method="post">
+    Measure: <input type="text" name="cause">
+    <br><br>
+    <input type="submit" value="Report"/>
+</form>
+<br><br>
+<a href="home"> Go back </a>
+</body>
+</html>

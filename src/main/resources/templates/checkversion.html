@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Check software version</title>
+</head>
+<body>
+<b> Current software version: <p th:text=" ${index}"> 1 </p></b>
+<br><br>
+<form action="upgradeversion">
+    <input type="submit" value="Check for software upgrades"/>
+</form>
+<br><br>
+<form action="downgradeversion">
+    <input type="submit" value="Software downgrade"/>
+</form>
+<br><br>
+<a href="home"> Go back</a>
+</body>
+</html>

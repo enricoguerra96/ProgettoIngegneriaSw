@@ -2,27 +2,32 @@ package mvc.app;
 import javax.persistence.*;
 
 @Entity
-public class Technician extends Person{
+public class Technician{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    private String firstName;
+    private String lastName;
     private String password;
 
     public Technician(){}
 
-    public Technician(String firstName, String lastName) {
-        super(firstName, lastName);
-    }
-
     protected Technician(String firstName, String lastName, String password){
-        super(firstName, lastName);
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.password = password;
     }
+
+
+    public String getName(){ return this.firstName; }
+
+    public String getSurname(){ return this.lastName; }
 
     public long getId() {
         return this.id;
     }
 
-    protected String getPassword(){ return this.password; }
+    public String getPassword(){ return this.password; }
+
 }

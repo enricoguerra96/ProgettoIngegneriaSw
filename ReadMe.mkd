@@ -1,0 +1,84 @@
+# WEATHER STATIONS SYSTEM
+
+### INFORMAL REQUIREMENTS
+
+The government of a country with large areas of wilderness decides to deploy several hundred **weather stations** in remote areas. Stations collect and process data from a set of instruments that measure :
+
+- Temperature
+- Pressure
+- Sunshine
+- Rainfall
+- Wind speed
+- Wind direction.
+
+Stations are used by **logged technicians** that are able to :
+
+- Sign up thus log in
+- Do measurements
+- Check the general health condition of the stations
+- Compile reports about faulty parts
+- Check for software updates
+
+A **maintenance station** is present to monitor measures and fix HW/SW problems (including batteries and signal).
+
+The **Software** supports dynamic configuration and can be upgraded, downgraded and backed up.
+
+### SCENARIOS
+
+5 scenarios were implemented:
+
+1. A user can **sign up** as a technician inserting Name, Username and Password. The system will automatically assign a numerical _id_. Then the new technician can **log in** using the _id_ and the Password.
+2. Weather stations collect, process and show **real time measurements**. All the measurements are then stored in a database.
+3. Technicians through weather stations can **check measurements and request new ones**. This includes checking for faults and eventually report them.
+4. Maintenance station can **produce real time reports** about signal or batteries problems and manage reports received by technicians.
+5. Software can be **upgraded and downgraded**, supporting dynamic configuration. Backup is always done.
+
+### DESIGN
+
+The project was developed using an **incremental approach**. Software design were represented using UML diagrams.
+Following diagrams were implemented in UML:
+
+* 1 general Class diagram
+* 5 UseCase diagrams, one for each scenario
+* 5 Activity diagrams, one for each scenario
+* 5 Sequence diagrams, one for each scenario
+
+### QUALITY ASSURANCE
+
+
+#####ACCEPTANCE TEST SELECTION
+
+A total of 14 acceptance tests were implemented in the class _AppTest_. 
+All the acceptance tests reflect different faces of all the important software features.
+Here are all acceptance test cases grouped by scenario:
+
+1. 5 tests were dedicated to the authentication and the login of the users:
+    * _testLoginWrong()_
+    * _testBlankLogin()_
+    * _testLoginToRegistration()_
+    * _testRegistrationBlank()_
+    * _testRegistrationOk()_
+2. 3 tests were dedicated to the technicians activities:
+    * _testControlHome()_
+    * _testHomeReport()_
+    * _testMonitorMeasures()_
+3. 1 test was dedicated to the data archiving and processing:
+    * _testDataArchiving()_
+4. 3 tests were dedicated to system health and faults report:
+    * _testHealthChecking()_
+    * _testWrongFaultReport()_
+    * _testOkFaultReport()_
+5. 2 tests were dedicated to software upgrade/downgrade:
+    * _testUpgradeVersion()_
+    * _testDowngradeVersion()_
+
+#####UNIT TEST COVERAGE
+
+The **AppController** class has already been tested with acceptance tests, so it hasn't undergone extensive unit testing.
+
+With this in mind, test coverage done with JaCoCo **including the appcontroller** reached a value of:
+
+- 74% instructions
+- 54% branches
+
+By excluding AppController, therefore, much higher values ​​are reached, especially on the instructions.

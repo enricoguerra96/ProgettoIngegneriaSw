@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Periodical check</title>
+</head>
+<body>
+<h1>Last periodical health check for each station.</h1>
+<table border="0">
+    <thead>
+    </thead>
+    <tbody>
+    <tr th:each="stat: ${result}">
+        <td th:text="${stat}"> <b> 10 </b></td>
+    </tr>
+    </tbody>
+</table>
+
+<br><br><br>
+
+<h1>Reports received: </h1>
+<br>
+<table border="0" id="t02">
+    <thead>
+    </thead>
+    <tbody>
+    <tr th:each="rep: ${reports}">
+        <td>Report received: </td>
+        <td th:text="${rep.getProblem()}"> <b> 10 </b></td>
+        <td> in </td>
+        <td th:text="${rep.getStation().getLocation()}"> 10 </td>
+    </tr>
+    </tbody>
+</table>
+
+<br><br>
+
+
+<a href="home"> Go back </a>
+</body>
+</html>

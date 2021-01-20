@@ -1,23 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Welcome</title>
+    <meta charset="UTF-8">
+    <title>Archive</title>
 </head>
 <body>
-<h1>Welcome to the Weather stations control home.</h1><br>
-<table border="0">
-    <thead>
-    </thead>
-    <tbody>
-    <br>
-    <form action="calculate">
-        <input type="submit" value="New measure"/>
-    </form>
-    <br><br>
-    </tbody>
-</table><br>
-
-<table border="1" id="t01">
+<h1>Archive of measurements</h1>
+<br><br>
+<table border="1">
     <thead>
     <tr>
         <th>Location</th>
@@ -27,7 +17,6 @@
         <th>Rainfall</th>
         <th>WindSpeed</th>
         <th>WindDirection</th>
-        <th>Report</th>
     </tr>
     </thead>
     <tbody>
@@ -39,23 +28,9 @@
         <td th:text="${WeatherStation.getRainfall()}"> Rome </td>
         <td th:text="${WeatherStation.getWindSpeed()}"> <b>10 </b></td>
         <td th:text="${WeatherStation.getWindDirection()}"> Rome </td>
-        <td> <a href="reportpage?id=10" th:href="@{reportpage(id=${WeatherStation.getId()})}">Report a problem</a></td>
     </tr>
     </tbody>
 </table>
-<br>
-<a href="archive"><b>Measurements archive</b></a>
-<br><br><br>
-<form action="periodicalcheck">
-    <input type="submit" value="Periodical health check"/>
-</form>
-<br><br>
-<form action="checkversion">
-    <input type="submit" value="Software version check"/>
-</form>
-<br><br>
-<a href="list"><b>List of logged technicians</b></a>
-<br><br>
-<a href="/">Logout</a>
+<a href="home">Go back</a>
 </body>
 </html>

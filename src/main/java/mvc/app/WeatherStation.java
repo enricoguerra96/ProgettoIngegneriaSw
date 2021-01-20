@@ -1,81 +1,100 @@
 package mvc.app;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Map;
+import javax.persistence.*;
 
 @Entity
 public class WeatherStation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
     private final String location;
-    //private List<String> measures = new LinkedList<>();
-    private String temperature="3";
-    private String pression;
-    private String rainfall;
+    private String temperature;
+    private String pressure;
     private String sunshine;
+    private String rainfall;
+    private String windSpeed;
+    private String windDirection;
 
-    private final DecimalFormat df = new DecimalFormat("#.##");
-    private final String[] directions = { "N", "NW", "W", "SW", "S", "SE", "E", "NE" };
+    public final String[] directions = {"N", "NE", "E", "SE", "S", "SW", "W", "NW"};
+
+    private final boolean[] faultprob = {true, true, true, true, false, true, true, true, true, true};
+    private boolean batteryState;
+    private boolean hardwareState;
+    private boolean signalState;
+
+    protected WeatherStation(){
+        this.location="";
+    }
 
     public WeatherStation(String location){
         this.location=location;
-        //collectMeasures();
+        collectMeasures();
+        setFaults();
     }
 
-    private void collectMeasures(){
-        this.temperature=(" °C");
-       /* measures.clear();
-        measures.add(df.format(Math.random() * 41) + " °C");
-        measures.add(df.format(Math.random() * 1028) + " hPa");
-        measures.add(df.format(Math.random() * 6.3) + " h/day");
-        measures.add(df.format(Math.random() * 16) + " mm");
-        measures.add(df.format(Math.random() * 36) + " km/h");
+    public Long getId() { return id; }
+
+    public String getLocation() {
+        return location;
+    }
+
+    void collectMeasures(){
+        this.temperature=(Math.round(Math.random() * 41)) + " °C";
+        this.pressure=(Math.round(Math.random() * 1028)) + " °hPa";
+        this.sunshine=(Math.round(Math.random() * 6.3)) + " h/day";
+        this.rainfall=(Math.round(Math.random() * 16)) + " mm";
+        this.windSpeed=(Math.round(Math.random() * 36)) + " km/h";
+
         int result = (int) (Math.random() * 8);
-        measures.add(directions[result]);*/
+        this.windDirection=(directions[result]);
     }
 
-   /* public void collectTemperature(){
-        int min=0;
-        int max=40;
-        measures.put(Measure.Temperature,df.format(Math.random() * (max - min + 1) + min) + " °C");
+    void setFaults(){
+        int result = (int) (Math.random() * 10);
+        this.batteryState = faultprob[result];
+
+        result = (int) (Math.random() * 10);
+        this.hardwareState = faultprob[result];
+
+        result = (int) (Math.random() * 10);
+        this.signalState = faultprob[result];
+
+        result = (int) (Math.random() * 10);
+        this.signalState = faultprob[result];
     }
 
-    public void collectPressure(){
-        int min=1020;
-        int max=1027;
-        measures.put(Measure.Pressure,df.format(Math.random() * (max - min + 1) + min) + " hPa");
+    public String getTemperature() { return temperature; }
+
+    public void setTemperature(String temperature) { this.temperature = temperature; }
+
+    public String getPressure() {
+        return pressure;
     }
 
-    public void collectSunshine(){
-        double min=5.5;
-        double max=6.3;
-        measures.put(Measure.Sunshine,df.format(Math.random() * (max - min + 1) + min) + " h7/day");
+    public void setPressure(String pressure) { this.pressure = pressure; }
+
+    public String getSunshine() {
+        return sunshine;
     }
 
-    public void collectRainfall(){
-        int min=0;
-        int max=15;
-        measures.put(Measure.Rainfall,df.format(Math.random() * (max - min + 1) + min) + " mm");
+    public void setSunshine(String sunshine) { this.sunshine = sunshine; }
+
+    public String getRainfall() {
+        return rainfall;
     }
 
-    public void collectWindSpeed(){
-        int min=0;
-        int max=35;
-        measures.put(Measure.WindSpeed,df.format(Math.random() * (max - min + 1) + min) + " km/h");
+    public void setRainfall(String rainfall) { this.rainfall = rainfall; }
+
+    public String getWindSpeed() { return windSpeed;
     }
 
-    public void collectWindDirection(){
-        int min=0;
-        int max=7;
-        int result= (int) (Math.random() * (max - min + 1)) + min;
-        measures.put(Measure.WindDirection, directions[result]);
-    }
-*/
+    public void setWindSpeed(String windSpeed) { this.windSpeed = windSpeed; }
+
+    public boolean getBatteryState() { return batteryState; }
+
+    public boolean getHardwareState() { return hardwareState; }
+
+    public boolean getSignalState() { return signalState; }
+
+    public String getWindDirection() { return windDirection; }
 }

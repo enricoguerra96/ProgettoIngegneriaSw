@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Logged technicians</title>
+</head>
+<body>
+
+<table border="1">
+<thead>
+<tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Password</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="tech: ${techs}">
+    <td th:text="${tech.getId()}"> <b>10 </b></td>
+    <td th:text="${tech.getName()}"> John </td>
+    <td th:text="${tech.getSurname()}"> Smith </td>
+    <td th:text="${tech.getPassword()}"> Hello</td>
+</tr>
+</tbody>
+</table>
+<a href="home"> Go back </a>
+</body>
+</html>
