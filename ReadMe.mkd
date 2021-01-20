@@ -46,7 +46,7 @@ Following diagrams were implemented in UML:
 ### QUALITY ASSURANCE
 
 
-#####ACCEPTANCE TEST SELECTION
+####ACCEPTANCE TEST SELECTION
 
 A total of 14 acceptance tests were implemented in the class _AppTest_. 
 All the acceptance tests reflect different faces of all the important software features.
@@ -72,7 +72,7 @@ Here are all acceptance test cases grouped by scenario:
     * _testUpgradeVersion()_
     * _testDowngradeVersion()_
 
-#####UNIT TEST COVERAGE
+####UNIT TEST COVERAGE
 
 The **AppController** class has already been tested with acceptance tests, so it hasn't undergone extensive unit testing.
 
