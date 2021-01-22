@@ -36,7 +36,7 @@ The **Software** supports dynamic configuration and can be upgraded, downgraded 
 ## DESIGN
 
 The project was developed using an **incremental approach**. Software design were represented using UML diagrams.
-Following diagrams were implemented in UML:
+The following diagrams were implemented in UML:
 
 * 1 general Class diagram
 * 5 UseCase diagrams, one for each scenario
@@ -76,9 +76,9 @@ Here are all acceptance test cases grouped by scenario:
 
 The **AppController** class has already been tested with acceptance tests, so it hasn't undergone extensive unit testing.
 
-With this in mind, test coverage done with JaCoCo **including the appcontroller** reached a value of:
+With this in mind, test coverage done with JaCoCo **including the AppController** reached a value of:
 
 - 74% instructions
 - 54% branches
 
-By excluding AppController, therefore, much higher values ​​are reached, especially on the instructions.
+By excluding AppController, therefore, much higher values ​​are achieved, especially on the instructions.
